@@ -1,0 +1,12 @@
+use codeup_test_db:
+
+drop table if exists guests;
+
+create table guests(
+primary key(id),
+id int,
+name varchar(100),
+
+
+
+);
