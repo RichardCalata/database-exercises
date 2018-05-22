@@ -1,5 +1,5 @@
 use codeup_test_db;
-
+truncate albums;
 insert into albums (artist, name,release_date,genre,sales)
 values ('Michael Jackson', 'Thriller', 1982,   'Pop, Rock, R&B',   47.3),(
 'AC/DC',   'Back in Black',    1980,   'Hard rock',    26.1),
@@ -7,7 +7,6 @@ values ('Michael Jackson', 'Thriller', 1982,   'Pop, Rock, R&B',   47.3),(
 ('Meat Loaf',   'Bat Out of Hell',  1977,   'Hard rock, Progressive rock',  21.5),
 ('Whitney Houston / Various artists',   'The Bodyguard',    1992,   'R&B, Soul, Pop, Soundtrack',   28.4),
 ('Eagles',  'Their Greatest Hits (1971–1975)',    1976,   'Rock, Soft rock, Folk rock',   32.2),
-
 ('Bee Gees / Various artists',  'Saturday Night Fever', 1977,   'Disco',    21.6),
 ('Fleetwood Mac',   'Rumours',  1977,   'Soft rock',    27.9),
 ('Various artists', 'Grease: The Original Soundtrack from the Motion Picture',  1978,   'Soundtrack',   14.4),
