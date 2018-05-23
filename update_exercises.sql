@@ -6,4 +6,4 @@ select * from albums where release_date < 1980;
 
 select * from albums where artist = 'michael jackson';
 
-update albums set artist = 'peter jackson' where id in (1,11,21);
+update albums set artist = 'peter jackson' where id in (1,11,21)
