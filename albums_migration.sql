@@ -17,3 +17,4 @@ unique (artist,name)
 
 
 
+select * from albums;
