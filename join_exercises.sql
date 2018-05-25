@@ -46,3 +46,17 @@ JOIN dept_manager AS dm on dm.emp_no = e.emp_no
 JOIN departments AS d on d.dept_no = dm.dept_no
 WHERE dm.to_date >= curdate() and e.gender = 'f'
 ORDER BY d.dept_name;
+
+SELECT DISTINCT title AS Title, count(*) AS count
+
+FROM titles t
+  JOIN dept_emp AS de ON de.emp_no = t.emp_no
+  JOIN departments d on de.dept_no = d.dept_no
+  WHERE dept_name = 'Customer Service'
+  AND de.to_date >= curdate()
+  AND t.to_date >= curdate()
+
+GROUP BY title;
+
+select * from departments;
+describe titles;
