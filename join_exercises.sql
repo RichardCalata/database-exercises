@@ -44,5 +44,5 @@ SELECT d.dept_name AS department,
   from employees as e
 JOIN dept_manager AS dm on dm.emp_no = e.emp_no
 JOIN departments AS d on d.dept_no = dm.dept_no
-WHERE dm.to_date >= curdate()
+WHERE dm.to_date >= curdate() and e.gender = 'f'
 ORDER BY d.dept_name;
