@@ -38,7 +38,7 @@ limit 100;
 select * from titles limit 100;
 
 
-
+# Find current Department Manager
 SELECT d.dept_name AS department,
   CONCAT(e.last_name,', ',e.first_name) AS manager
   from employees as e
@@ -60,3 +60,13 @@ GROUP BY title;
 
 select * from departments;
 describe titles;
+
+SELECT d.dept_name AS department,
+       CONCAT(e.last_name,', ',e.first_name) AS manager,
+  salary
+from employees as e
+  JOIN dept_manager AS dm on dm.emp_no = e.emp_no
+  JOIN departments AS d on d.dept_no = dm.dept_no
+  JOIN salaries s on e.emp_no = s.emp_no
+WHERE dm.to_date >= curdate() and s.to_date >= curdate()
+ORDER BY d.dept_name;
