@@ -32,6 +32,7 @@ JOIN dept_emp AS de
 on de.dept_no = d.dept_no
 Join employees as e
 on e.emp_no = de.emp_no
+
 # GROUP BY d.dept_name, e.last_name,e.first_name
 limit 100;
 
