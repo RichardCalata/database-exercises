@@ -29,12 +29,23 @@ WHERE emp_no IN
 (SELECT emp_no from employees WHERE gender = 'f')
 AND to_date > now());
 
-select emp_no from dept_manager where to_date >now();
+SELECT first_name, last_name FROM employees
+WHERE emp_no in (SELECT emp_no FROM salaries
+ORDER BY salary DESC);
 
-select last_name, emp_no from employees
-where emp_no in (select emp_no from dept_manager where to_date >now())and gender = 'f';
 
+SELECT emp_no FROM salaries
+ORDER BY salary DESC
+LIMIT 1;
 
-SELECT emp_no from dept_manager WHERE to_date > now()
-  AND  emp_no IN
-(SELECT emp_no from employees WHERE gender = 'f');
+select * from salaries
+ORDER BY salary DESC limit 1;
+
+SELECT first_name, last_name
+FROM employees
+WHERE emp_no  = (SELECT emp_no From salaries WHERE salary = (SELECT MAX(SALARY) FROM salaries));
+
+select MAX(salary) AS SALARY from salaries;
+
+SELECT emp_no From salaries WHERE salary = (SELECT MAX(SALARY) FROM salaries);
+
