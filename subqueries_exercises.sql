@@ -14,4 +14,13 @@ select title from titles;
 
 select * from employees where first_name = 'Aamod';
 
+select CONCAT(last_name, ', ', first_name) AS Name from employees
+where emp_no in (
+
+select emp_no from dept_manager
+where to_date > now()
+)
+
+and gender ='f';
+
 
