@@ -1,20 +1,22 @@
 USE employees;
 
+
+--exercise 1
 SELECT CONCAT(last_name, ', ',first_name), hire_date FROM employees
 WHERE hire_date = (SELECT hire_date FROM employees WHERE emp_no = 101010);
 
-
+--exercise 2
 SELECT title FROM titles WHERE emp_no IN
 (SELECT emp_no FROM employees WHERE first_name = 'Aamod');
 
+--exercise 3
 SELECT CONCAT(first_name,' ' ,last_name) AS Name FROM employees
 WHERE emp_no
 IN (SELECT emp_no FROM dept_manager
 WHERE to_date > now())
 AND gender ='f';
 
-
-
+--Bonus 1
 SELECT dept_name FROM departments
 WHERE dept_no
 IN (SELECT dept_no FROM dept_manager
@@ -22,7 +24,7 @@ WHERE emp_no IN
 (SELECT emp_no FROM employees WHERE gender = 'f')
 AND to_date > now());
 
-
+--Bonus 2
 SELECT first_name, last_name
 FROM employees
 WHERE emp_no  = (SELECT emp_no From salaries WHERE salary = (SELECT MAX(SALARY) FROM salaries));
