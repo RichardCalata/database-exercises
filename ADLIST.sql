@@ -36,14 +36,14 @@ TRUNCATE ads;
 insert into ads (content, title)
 
  values
-  ('lorem ipsum','first ad'),
-  ('lorem ilipsum','second ad'),
-  ('lorem coniipsum','third ad'),
-  ('lorem convivum','fourth ad'),
-  ('lorem Green','fifth ad'),
-  ('Extra lorem','sixth ad'),
-  ('lorem Deluxe','seventh ad'),
-  ('lorem Quantum','eighth ad');
+  ('Flux Capacitor for Sale','for sale'),
+  ('looking for Flux Capacitor','WTB'),
+  ('Lost: Flux Capacitor','Lost'),
+  ('Found: Flux Capacitor','Found'),
+  ('Giveaway: flux Capacitor','Giveaway'),
+  ('Flux Capacitor Tech looking for work','Job Seeker'),
+  ('Can someone teach me to use a Flux Capacitor','Help Wanted'),
+  ('I think my Flux Capacitor is haunted','Mystery');
 
 select * from ads;
 
@@ -75,4 +75,8 @@ Create Table IF NOT EXISTS ad_category(
   category_id int unsigned not null,
   foreign key (ad_id) references ads(id),
   foreign key (category_id) references categories(id)
-)
+);
+
+select * from ad_category;
+select * from ads;
+select * from users;
